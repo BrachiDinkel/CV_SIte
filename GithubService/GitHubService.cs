@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GithubService;
-using GithubService.Entities; // ✅ ייבוא המרחב הנכון למחלקת RepoInfo
+using GithubService.Entities; 
 using Microsoft.Extensions.Options;
 using Octokit;
 
@@ -30,7 +30,7 @@ namespace GitHubPortfolio.Service
             {
                 if (string.IsNullOrEmpty(repo.DefaultBranch))
                 {
-                    continue; // מוודא שלא תהיה גישה ל-DefaultBranch ריק
+                    continue;
                 }
 
                 var languages = await _client.Repository.GetAllLanguages(repo.Id);
@@ -52,7 +52,7 @@ namespace GitHubPortfolio.Service
                 portfolio.Add(repoInfo);
             }
 
-            return portfolio; // מחזיר List<RepoInfo>
+            return portfolio; 
         }
 
 
